@@ -16,38 +16,38 @@ Uma comparação dentre os principais comandos para gerenciar os pacotes pelo pr
 
 | Tarefa | Comando |  |  |  |  |
 | :-- | :-- | :-- | :-- | :-- | :-- |
-| Instalar pacote do local | dpkg -i <pacote> | rpm -i <pacote> |  | dnf install <pacote> | yum localinstall <pacote> |
-| Atualizar pacote do local |  | rpm -U <pacote> |  | dnf upgrade <pacote> | yum localupdate <pacote> |
-| Atualizar pacote do repo |  |  |  | dnf upgrade <pacote> | yum update <pacote> |
-| Atualizar pacote se estiver instalado |  | rpm -F <pacote> |  |  |  |
-| Instalar pacote do repo |  |  | apt-get install <pacote> | dnf install <pacote> | yum install <pacote> |
-| Instalar grupo de pacotes |  |  |  | dnf group install <grupo> | yum groupinstall <grupo> |
-| Reinstalar um pacote |  |  |  | dnf reinstall <pacote> | yum reinstall <pacote> |
-| Atualizar grupo de pacotes |  |  |  | dnf group upgrade <grupo> | yum groupupdate <grupo> |
-| Remover pacote | dpkg -r <pacote> | rpm -e <pacote> | apt-get remove <pacote> | dnf remove <pacote> | yum remove <pacote> |
+| Instalar pacote do local | dpkg -i \<pacote> | rpm -i \<pacote> |  | dnf install \<pacote> | yum localinstall \<pacote> |
+| Atualizar pacote do local |  | rpm -U \<pacote> |  | dnf upgrade \<pacote> | yum localupdate \<pacote> |
+| Atualizar pacote do repo |  |  |  | dnf upgrade \<pacote> | yum update \<pacote> |
+| Atualizar pacote se estiver instalado |  | rpm -F \<pacote> |  |  |  |
+| Instalar pacote do repo |  |  | apt-get install \<pacote> | dnf install \<pacote> | yum install \<pacote> |
+| Instalar grupo de pacotes |  |  |  | dnf group install \<grupo> | yum groupinstall \<grupo> |
+| Reinstalar um pacote |  |  |  | dnf reinstall \<pacote> | yum reinstall \<pacote> |
+| Atualizar grupo de pacotes |  |  |  | dnf group upgrade \<grupo> | yum groupupdate \<grupo> |
+| Remover pacote | dpkg -r \<pacote> | rpm -e \<pacote> | apt-get remove \<pacote> | dnf remove \<pacote> | yum remove \<pacote> |
 | Remover pacotes órfãos |  |  |  |  | package-cleanup --orphans |
 | Remover pacotes solitários |  |  |  |  | package-cleanup --leaves |
-| Remover grupo de pacotes |  |  |  | dnf group remove <grupo> | yum groupremove <grupo> |
-| Listar arquivos do pacote instalado | dpkg -L <pacote> | rpm -ql <pacote> |  | dnf repoquery --list <pacote> |  |
-| Listar arquivos do pacote não instalado | dpkg-deb -c <pacote> | rpm -qpl <pacote> |  | dnf repoquery --list <pacote> |  |
-| Mostrar informações do pacote instalado | dpkg -s <pacote> | rpm -qi <pacote> | apt-cache show <pacote> | dnf info <pacote> | yum info <pacote> |
-| Mostrar informações do pacote não instalado |  | rpm -qpi <pacote> | apt-cache show <pacote> | dnf info <pacote> | yum info <pacote> |
-| Mostrar novidades da versão do pacote |  | rpm -q --changelog <pacote> | apt-listchanges <pacote> |  |  |
-| Display overview of how many groups are installed and available |  |  |  | dnf group <grupo> |  |
-| Mostrar detalhes sobre um grupo de pacotes |  |  |  | dnf group info <grupo> | yum groupinfo <grupo> |
-| Extrair arquivo do pacote | dpkg-deb -–extract <pacote> | rpm2cpio <pacote>|cpio -vid |  |  |  |
+| Remover grupo de pacotes |  |  |  | dnf group remove \<grupo> | yum groupremove \<grupo> |
+| Listar arquivos do pacote instalado | dpkg -L \<pacote> | rpm -ql \<pacote> |  | dnf repoquery --list \<pacote> |  |
+| Listar arquivos do pacote não instalado | dpkg-deb -c \<pacote> | rpm -qpl \<pacote> |  | dnf repoquery --list \<pacote> |  |
+| Mostrar informações do pacote instalado | dpkg -s \<pacote> | rpm -qi \<pacote> | apt-cache show \<pacote> | dnf info \<pacote> | yum info \<pacote> |
+| Mostrar informações do pacote não instalado |  | rpm -qpi \<pacote> | apt-cache show \<pacote> | dnf info \<pacote> | yum info \<pacote> |
+| Mostrar novidades da versão do pacote |  | rpm -q --changelog \<pacote> | apt-listchanges \<pacote> |  |  |
+| Display overview of how many groups are installed and available |  |  |  | dnf group \<grupo> |  |
+| Mostrar detalhes sobre um grupo de pacotes |  |  |  | dnf group info \<grupo> | yum groupinfo \<grupo> |
+| Extrair arquivo do pacote | dpkg-deb -–extract \<pacote> | rpm2cpio \<pacote>|cpio -vid |  |  |  |
 | Listar todos os pacotes instalados | dpkg -l | rpm -qa |  | dnf list --installed | yum list installed |
 | Listar todos os pacotes disponíveis | N/A | N/A | apt-cache pkgnames | dnf list | yum list |
-| Listar os grupos de pacotes disponíveis |  |  |  | dnf group list <grupo> | yum grouplist |
-| Verificar integridade do pacote |  | rpm -K <pacote> |  |  |  |
-| Verificar integridade dos arquivos instalados do pacote |  | rpm -V <pacote> |  |  |  |
+| Listar os grupos de pacotes disponíveis |  |  |  | dnf group list \<grupo> | yum grouplist |
+| Verificar integridade do pacote |  | rpm -K \<pacote> |  |  |  |
+| Verificar integridade dos arquivos instalados do pacote |  | rpm -V \<pacote> |  |  |  |
 | Verificar integridade dos arquivos instalados de todos os pacotes | debsums | rpm -Va |  |  |  |
-| Mostrar qual pacote pertence o arquivo | dpkg -S <arquivo> | rpm -qf <arquivo> | apt-file search <arquivo> | dnf provides <arquivo> | yum provides <arquivo> |
-| Listar todos os arquivos que acompanham o arquivo no pacote |  | rpm -qdf <arquivo> |  |  |  |
-| Mostrar as dependências do pacote |  | rpm -qpR <pacote> | apt-cache depends <pacote> | dnf repoquery --deplist <pacote> | yum deplist <pacote> |
-| Mostrar os pacotes que dependem do pacote |  | rpm -q --whatrequires <pct> | apt-cache rdepends <pacote> |  | yum resolvedep <dependência> |
-| Procurar expressão em pacotes do repositório |  |  | apt-cache search <expressão> | dnf search <expressão> | yum search <expressão> |
-| Procurar pacotes nos repositórios |  |  |  | dnf search <pacote> | yum search <pacote> |
+| Mostrar qual pacote pertence o arquivo | dpkg -S \<arquivo> | rpm -qf \<arquivo> | apt-file search \<arquivo> | dnf provides \<arquivo> | yum provides \<arquivo> |
+| Listar todos os arquivos que acompanham o arquivo no pacote |  | rpm -qdf \<arquivo> |  |  |  |
+| Mostrar as dependências do pacote |  | rpm -qpR \<pacote> | apt-cache depends \<pacote> | dnf repoquery --deplist \<pacote> | yum deplist \<pacote> |
+| Mostrar os pacotes que dependem do pacote |  | rpm -q --whatrequires \<pct> | apt-cache rdepends \<pacote> |  | yum resolvedep \<dependência> |
+| Procurar expressão em pacotes do repositório |  |  | apt-cache search \<expressão> | dnf search \<expressão> | yum search \<expressão> |
+| Procurar pacotes nos repositórios |  |  |  | dnf search \<pacote> | yum search \<pacote> |
 | Exibir os repositórios de software configurados |  |  |  | dnf repolist --all | yum repolist |
 | Atualizar lista de pacotes dos repositórios |  |  | apt-get update |  | (o yum faz automaticamente a cada uso) |
 | Verificar novas atualizações |  |  | apt-get -s upgrade | dnf check-update | yum check-update |
